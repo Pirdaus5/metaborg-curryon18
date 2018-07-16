@@ -17,6 +17,7 @@ context-free priorities
  > Exp.Mul,
  
  Exp.Or
+ > Exp.If
  > Exp.Let 
  > Exp.Ascription
  

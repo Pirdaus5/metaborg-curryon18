@@ -1,0 +1,26 @@
+module Num {
+  def inc = function(x) { x + 1 }
+  def add = function(x, y) { x + y }
+  def fac = function(n) {
+    if(n == 0) 1
+    else n * fac(n - 1)
+  }
+}
+
+module Config {
+  def consta = 56
+  def constb = 5
+}
+
+module Client {
+  imports Num
+  imports Config
+  def uselib = add(inc(consta), constb)
+}
+
+def foo = consta // error
+
+def modref = Config.consta 
+
+ 
+

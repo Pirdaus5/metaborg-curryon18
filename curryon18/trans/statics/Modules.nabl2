@@ -1,7 +1,6 @@
 module statics/Modules
 
 signature
-  namespaces Mod
   constructors
     MOD : scope -> Type
     
@@ -9,12 +8,12 @@ rules
 
   Def[[ Module(x, imps, defs) ^ (s) ]] := 
     new s_mod, s_mod -P-> s,
-    Mod{x} <- s, Mod{x} : MOD(s_mod),
+    Var{x} <- s, Var{x} : MOD(s_mod),
     Imports[[ imps ^ (s, s_mod) ]],
     [[ defs ^ (s_mod) ]].
 
   Import[[ Imports(x) ^ (s, s_mod1) ]] := 
-    Mod{x} -> s, Mod{x} |-> d, d : MOD(s_mod2),
+    Var{x} -> s, Var{x} |-> d, d : MOD(s_mod2),
     s_mod1 -I-> s_mod2.
     
   Imports[[ [] ^ (s, s_mod) ]].
@@ -23,4 +22,8 @@ rules
     Import[[ imp ^ (s, s_mod) ]],
     Imports[[ imps ^ (s, s_mod) ]].
     
+  [[ ModRef(e, f) ^ (s) : t ]] :=
+     [[ e ^ (s) : MOD(s_mod) ]],
+     new s_ref, s_ref -I-> s_mod,
+     Var{f} -> s_ref, Var{f} |-> d, d : t.
      

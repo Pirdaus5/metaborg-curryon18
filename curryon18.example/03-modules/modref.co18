@@ -1,0 +1,9 @@
+module A {
+  def x = 1
+}
+
+module B {
+  def x = true
+  def z = x
+  def y = A.x
+}

@@ -14,6 +14,8 @@ context-free syntax // modules
   
   Imports.Imports = <imports <ID>> 
   
+  Exp.ModRef = <<Exp>.<ID>>
+  
 template options
 
   ID = keyword {reject}

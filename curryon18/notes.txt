@@ -1,6 +1,8 @@
-things to demonstrate
+Live Programming Language Design with Spoofax
 
-testing
+Spoofax Language Workbench
+- a work in progress
+- sandbox for exploring abstractions for language engineerig => meta DSLs
 
 syntax
 - productions
@@ -10,6 +12,8 @@ syntax
 
 static semantics
 - constraint generation rules
+
+testing
 
 editor features
 - syntax checking 
@@ -23,7 +27,7 @@ language features
 - constants
 - binary operators
 - brackets
-- low priority prefix operator
+- low priority prefix operators (let)
 - longest match
 
 - modules

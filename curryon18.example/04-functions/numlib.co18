@@ -1,0 +1,7 @@
+ def inc = function(x) { x + 1 }
+ def add = function(x, y) { x + y }
+
+ def consta = 56
+ def constb = 5
+
+ def uselib = add(inc(consta), constb)
