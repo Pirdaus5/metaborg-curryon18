@@ -5,5 +5,5 @@ module A {
 module B {
   def x = true
   def z = x
-  def y = A.x
+  def y = A.x 
 }

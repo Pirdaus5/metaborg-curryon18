@@ -5,16 +5,15 @@ imports Base
 
 context-free syntax
 
-  Exp.Let  = <
-    let <ID> = <Exp> in 
-    <Exp>
-  > 
-
   Def.VarDecl = <def <ID> : <TypeExp> = <Exp>>
   
   Def.VarDeclNoType = <def <ID> = <Exp>>
 
   Exp.Var = <<ID>>  
+    Exp.Let  = <
+    let <ID> = <Exp> in 
+    <Exp>
+  > 
   
 template options
 

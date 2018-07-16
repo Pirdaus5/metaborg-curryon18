@@ -2,6 +2,17 @@ module statics/Base
 
 imports signatures/-
 
+rules
+
+  [[ Ascription(e, te) ^ (s) : t]] :=
+     [[ e ^ (s) : u ]],
+     [[ te ^ (s) : t ]],
+     u == t.
+     
+     
+     
+     
+     
 signature
   name resolution
     labels 
@@ -15,16 +26,3 @@ signature
       
   namespaces
     Type Var Field
-    
-//  constraint generator
-//    [[ Exp ^ (scope) : Type ]]
-//    [[ TypeExp ^ (scope) : Type ]]
-//    Def[[ Def ^ (scope) ]]
-//    [[ Defs ^ (scope) ]]
-    
-rules
-
-  [[ Ascription(e, te) ^ (s) : t]] :=
-     [[ e ^ (s) : u ]],
-     [[ te ^ (s) : t ]],
-     u == t.

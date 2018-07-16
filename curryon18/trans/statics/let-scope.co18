@@ -1,0 +1,9 @@
+// scope
+
+def x = 1 + y // use before def
+
+def y = let z = 3 in
+        let b = a * 8 in // !use before def
+        let a = z + 1 in
+          a + b
+        

@@ -1,0 +1,27 @@
+module test
+
+language curryon18
+
+test number constant [[
+  1 
+]] parse succeeds
+
+test operator composition  [[ 
+  1 + 2 + 4
+]] parse to Exp(Add(Add(_, _), _))
+ 
+test operator composition [[
+  1 + 2 - 43
+]] parse to Exp(Sub(Add(_, _), _)) 
+
+test operator composition [[ 
+  6 + 4 * 5 
+]] parse to Exp(Add(_, Mul(_,_)))
+
+test operator composition [[ 
+  6 + 4 * 5 + 7   
+]] parse to Exp(Add(Add(_, Mul(_,_)), _))
+
+test non assoc [[
+  1 + 2 == 4 == true : bool
+]] parse fails

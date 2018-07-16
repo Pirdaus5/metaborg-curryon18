@@ -2,24 +2,54 @@ module statics/Variables
 
 rules // variables
 
-  [[ Let(x, e1, e2) ^ (s) : u ]] := 
-     new s_let, s_let -P-> s,
-     [[ e1 ^ (s) : t ]],
-     Var{x} <- s, Var{x} : t,
-     [[ e2 ^ (s_let) : u ]].
-     
   Def[[ VarDecl(x, te, e) ^ (s) ]] :=     
      [[ te ^ (s) : t ]],
-     Var{x} <- s, Var{x} : t,
      [[ e ^ (s) : u ]], 
      t == u.
      
   Def[[ VarDeclNoType(x, e) ^ (s) ]] := 
-     [[ e ^ (s) : t ]], 
-     Var{x} <- s, Var{x} : t.
+     [[ e ^ (s) : t ]].
      
-  [[ Var(x) ^ (s) : t ]] := 
-     Var{x} -> s,
-     Var{x} |-> d, 
-     d : t.
+  [[ Var(x) ^ (s) : t ]].
+     
+  [[ Let(x, e1, e2) ^ (s) : u ]] := 
+     [[ e1 ^ (s) : t ]],
+     [[ e2 ^ (s) : u ]].
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+
+//rules // variables
+//
+//  [[ Let(x, e1, e2) ^ (s) : u ]] := 
+//     new s_let, s_let -P-> s,
+//     [[ e1 ^ (s) : t ]],
+//     Var{x} <- s, Var{x} : t,
+//     [[ e2 ^ (s_let) : u ]].
+//     
+//  Def[[ VarDecl(x, te, e) ^ (s) ]] :=     
+//     [[ te ^ (s) : t ]],
+//     Var{x} <- s, Var{x} : t,
+//     [[ e ^ (s) : u ]], 
+//     t == u.
+//     
+//  Def[[ VarDeclNoType(x, e) ^ (s) ]] := 
+//     [[ e ^ (s) : t ]], 
+//     Var{x} <- s, Var{x} : t.
+//     
+//  [[ Var(x) ^ (s) : t ]] := 
+//     Var{x} -> s,
+//     Var{x} |-> d, 
+//     d : t.
      

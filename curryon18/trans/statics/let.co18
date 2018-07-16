@@ -1,0 +1,13 @@
+let x = 1 in
+
+let b = true in
+
+let y = x + 3 in
+
+let c = b && false in
+
+let d = c + y in // error
+
+let e = c + y in  // error
+ 
+e + 3

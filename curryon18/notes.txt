@@ -1,53 +1,48 @@
+Eelco Visser
+
+Delft University of Technology
+
 Live Programming Language Design with Spoofax
 
 Spoofax Language Workbench
 - a work in progress
-- sandbox for exploring abstractions for language engineerig => meta DSLs
+- sandbox for exploring abstractions for language engineering => meta-DSLs
 
-syntax
-- productions
-- constructors
-- abstract syntax 
-- declarative disambiguation
+Spoofax Meta-DSLs:
+- SDF3: syntax definition <=============== today
+- NaBL2: type systems <=================== today
+- Stratego: program transformation
+- DynSem: dynamic semantics
+- SPT: testing <========================== today
 
-static semantics
-- constraint generation rules
+Now go to demo.txt
 
-testing
 
-editor features
-- syntax checking 
-- error recovery
-- name checking
-- type checking
-- reference resolutions
 
-language features
-- expressions
-- constants
-- binary operators
-- brackets
-- low priority prefix operators (let)
-- longest match
 
-- modules
-  - nested
-  - recursive
-  
-develop by feature group
 
-00) programs
-01) expressions
-02) variables
-03) modules
 
-work in progress
 
+
+
+
+
+
+
+
+Some work in progress
+
+Language and tools:
 - Layout-sensitive SDF3
 - Statix: more expressive type systems
 - FlowSpec: data flow analysis
 - DynSem: dynamic semantics & interpreter generation
 - PIE: flexible incremental workflows
 
+Concepts:
+- Scopes and frames: language independent represent of binding and memory
+- Truly live language design
 
-- dynamic 
+More: http://metaborg.org
+
+

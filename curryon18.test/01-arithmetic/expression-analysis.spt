@@ -2,7 +2,7 @@ module test
 
 language curryon18
 
-test type of [[
+test type of [[ 
   1 : int
 ]] analysis succeeds
 
@@ -10,14 +10,10 @@ test type of [[
   (1 + 2 + 4) : int 
 ]] analysis succeeds
 
-test type of [[
-  (1 * 2 + 4) : int 
+test type of [[ 
+  (1 * 2 + true) : int 
 ]] analysis succeeds
 
-test type of [[
-  1 + 2 + 4 == true
-]] analysis fails
-
-test type of [[
+test type of [[ 
   (1 + 2 == 4) == true : bool 
-]] analysis succeeds
+]] analysis succeeds 

@@ -1,0 +1,47 @@
+Demonstration
+
+(1) Expressions
+
+syntax
+- template productions
+- constructors for abstract syntax 
+- declarative disambiguation
+- don't forget top-level priority declarations
+types
+- constraint generation
+- checking operator types
+editor features
+- syntax checking 
+- error recovery
+- type checking
+
+
+
+
+(2) Variables
+
+name binding
+- scope graphs
+- declarations
+- references
+- resolution
+- shadowing
+editor features
+- name checking
+- reference resolutions
+
+
+
+
+(3) Modules
+
+non-lexical binding
+- scopes as types
+- nested modules
+
+(4) Functions
+
+inference
+
+Back to notes.txt
+

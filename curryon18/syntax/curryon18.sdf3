@@ -13,11 +13,12 @@ context-free start-symbols Program Exp
 
 context-free priorities
 
- Exp.App
- > Exp.Mul,
- 
- Exp.Or
- > Exp.If
+// Exp.App
+// > Exp.Mul,
+// 
+// Exp.Or
+// > 
+ Exp.If
  > Exp.Let 
  > Exp.Ascription
  
