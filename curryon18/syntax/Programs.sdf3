@@ -1,0 +1,13 @@
+module Programs
+
+imports Common Base
+
+context-free syntax
+
+  Program.Exp = <<Exp>>
+  Program     = <<Defs>>
+  Defs.Defs   = <<{Def "\n\n"}*>>
+
+template options
+
+  ID = keyword {reject}

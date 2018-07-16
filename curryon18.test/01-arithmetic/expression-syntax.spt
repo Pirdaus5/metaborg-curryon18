@@ -1,0 +1,41 @@
+module test
+
+language curryon18
+
+test parse [[
+  1 
+]] parse succeeds
+
+test parse [[
+  1 + 2 + 4
+]] parse succeeds
+
+test parse [[
+  1 + (2 + 43)
+]] parse to Exp(Add(Int("1"),Add(Int("2"),Int("43"))))
+
+test parse [[
+  1 + 2 + 4
+]] parse to Exp(Add(Add(Int("1"),Int("2")),Int("4"))) 
+
+test parentheses [[
+  (42)
+]] parse to Exp(Int("42"))
+
+test plus/times sequence [[ 
+  (x + 4) * 5
+]] parse to Exp(Mul(Add(Var("x"),Int("4")),Int("5")))
+
+
+test left-associative addition [[
+  21 + 14 + 7
+]] parse to [[(21 + 14) + 7]]
+  
+test precedence multiplication [[
+  3 * 7 + 21 
+]] parse to [[(3 * 7) + 21]]
+  
+
+test non assoc [[
+  1 + 2 == 4 == true : bool
+]] parse fails

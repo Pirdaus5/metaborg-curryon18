@@ -1,0 +1,18 @@
+def curry = function(f){ 
+              function(x){
+                function(y){
+                  f(x, y)
+                }
+              } 
+            }
+            
+def add = function(x, y) { x + y }
+
+def sum = add(3, 6) 
+
+def curried = curry(add)
+
+def add1 = curried(1)
+
+def added = add1(3)
+

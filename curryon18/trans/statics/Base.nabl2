@@ -1,0 +1,30 @@
+module statics/Base
+
+imports signatures/-
+
+signature
+  name resolution
+    labels 
+      P I 
+    well-formedness 
+      P* I*
+    order
+      D < P, 
+      D < I, 
+      I < P
+      
+  namespaces
+    Type Var Field
+    
+//  constraint generator
+//    [[ Exp ^ (scope) : Type ]]
+//    [[ TypeExp ^ (scope) : Type ]]
+//    Def[[ Def ^ (scope) ]]
+//    [[ Defs ^ (scope) ]]
+    
+rules
+
+  [[ Ascription(e, te) ^ (s) : t]] :=
+     [[ e ^ (s) : u ]],
+     [[ te ^ (s) : t ]],
+     u == t.

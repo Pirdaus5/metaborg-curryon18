@@ -1,13 +1,14 @@
 module static-semantics
 
-imports
-
-  signatures/-
-
+imports statics/Base
+imports statics/Programs
+imports statics/Expressions
+imports statics/Variables
+imports statics/Modules
+imports statics/Functions
+imports statics/ControlFlow
+    
 rules
 
   init ^ (s) := new s.
-
-  [[ Empty() ^ (s) ]] :=
-    false | note "Specify name binding and typing rules in static-semantics.nabl2".
-
+  

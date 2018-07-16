@@ -1,0 +1,12 @@
+module A {
+  module B {
+    imports C
+  }
+}
+
+module C {
+  imports A 
+  module D {
+    imports B
+  }
+}

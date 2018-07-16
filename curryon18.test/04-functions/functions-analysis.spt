@@ -1,0 +1,39 @@
+module test
+
+language curryon18
+
+test typing [[
+  def inc = function (x : int) { x + 1 }
+]] analysis succeeds
+
+
+test curry typed [[
+  def curry = function (f : (int, int) => int) : (int) => (int) => int { 
+                function(x : int) {
+                  function(y : int) {
+                    f(x, y)
+                  }
+                }
+              } 
+  def add = function(x: int, y: int) { x + y }
+
+  def curried = curry(add)
+]] analysis succeeds
+
+
+test curry inferred [[ 
+  def curry = function(f){ 
+                function(x){
+                  function(y){
+                    f(x, y)
+                  }
+                } 
+              }
+            
+  def add = function(x, y) { x + y }
+
+  def curried = curry(add)
+
+  def applied = curried(1)(2)
+]] analysis succeeds
+

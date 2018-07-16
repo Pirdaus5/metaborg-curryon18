@@ -1,13 +1,22 @@
 module curryon18
 
-imports
-  
-  Common
+imports Common
+imports Base
+imports Programs
+imports Expressions
+imports Variables
+imports Modules
+imports Functions
+imports ControlFlow
 
-context-free start-symbols
-  
-  Start
+context-free start-symbols Program Exp
 
-context-free syntax
-  
-  Start.Empty = <>
+context-free priorities
+
+ Exp.App
+ > Exp.Mul,
+ 
+ Exp.Or
+ > Exp.Let 
+ > Exp.Ascription
+ 

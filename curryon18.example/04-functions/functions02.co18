@@ -1,0 +1,4 @@
+def inc = function (x : int) { x + 1 }
+
+def x = inc(2)
+

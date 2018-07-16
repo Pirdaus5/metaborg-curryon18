@@ -1,0 +1,8 @@
+module Base
+
+sorts TypeExp Exp Program Def Defs
+
+context-free syntax
+
+  Exp.Ascription = <<Exp> : <TypeExp>>
+  

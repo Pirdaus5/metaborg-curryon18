@@ -1,0 +1,19 @@
+module Modules
+
+imports Common
+imports Base
+
+context-free syntax // modules
+
+  Def.Module = <
+    module <ID> {
+      <{Imports "\n"}*>
+      <Defs>
+    }
+  >
+  
+  Imports.Imports = <imports <ID>> 
+  
+template options
+
+  ID = keyword {reject}

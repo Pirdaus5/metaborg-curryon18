@@ -1,0 +1,26 @@
+module Functions
+
+imports Common Base 
+
+context-free syntax // functions
+
+  TypeExp.FunT = [([{TypeExp ", "}*]) => [TypeExp]]
+
+  Exp.Fun = <
+    function (<{Param ", "}*>) <ReturnType> {
+      <Exp>
+    }
+  >
+  
+  Param.Param = <<ID> : <TypeExp>>
+  
+  Param.ParamNoType = <<ID>>
+  
+  ReturnType.NoType = <>
+  ReturnType.RetType = <: <TypeExp>>
+  
+  Exp.App = <<Exp>(<{Exp ", "}*>)> {left}
+
+template options
+
+  ID = keyword {reject}

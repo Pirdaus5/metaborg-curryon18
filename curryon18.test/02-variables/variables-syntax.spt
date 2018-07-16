@@ -1,0 +1,16 @@
+module test
+
+language curryon18
+
+test parse [[
+  def x = 1
+]] parse succeeds
+
+test parse [[
+  def abc = 1 + 2 + 4 
+]] parse succeeds
+
+test parse [[
+  def abc = 1 + 2 + 4 
+  def cde = abc == 3 : bool
+]] parse succeeds

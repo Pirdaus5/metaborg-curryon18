@@ -1,0 +1,45 @@
+module test
+
+language curryon18
+
+test parse [[
+  module A {
+  }
+  module B {
+    imports A  
+  }
+]] analysis succeeds
+
+test parse [[
+  module A {
+    imports B
+  } 
+  module B {
+    imports A 
+  }
+]] analysis succeeds
+
+test parse [[
+  module Foo {
+    def abc = 1 + 2 + 4 
+    def cde = abc == 3 : bool
+  }
+]] analysis succeeds
+
+test parse [[
+  module Bar {
+    module Foo {
+      def abc = 1 + 2 + 4 
+      def cde = abc == 3 : bool
+    }
+  }
+]] analysis succeeds
+
+test parse [[
+  module Bar {
+    module Foo {
+      def abc = 1 + 2 + 4 
+      def cde = abc == 3 : bool
+    }
+  }
+]] analysis succeeds

@@ -1,0 +1,15 @@
+module statics/Programs
+
+rules
+
+  [[ Exp(e) ^ (s) ]] := 
+    [[ e ^ (s) : t ]].
+    
+  [[ Defs(defs) ^ (s) ]] :=
+     Defs[[ defs ^ (s) ]].
+
+  Defs[[ [] ^ (s) ]] := true.
+  Defs[[ [def | defs] ^ (s) ]] := 
+    Def[[ def ^ (s) ]],
+    Defs[[ defs ^ (s) ]].
+

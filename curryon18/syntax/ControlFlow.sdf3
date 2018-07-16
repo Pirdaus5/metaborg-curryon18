@@ -1,0 +1,16 @@
+module ControlFlow
+
+imports Common Base
+
+context-free syntax
+
+  Exp.If = <
+    if(<Exp>)
+      <Exp>
+    else
+      <Exp>
+  >
+
+template options
+
+  ID = keyword {reject}

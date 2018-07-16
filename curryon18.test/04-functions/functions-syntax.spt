@@ -1,0 +1,7 @@
+module functions-syntax
+
+language curryon18
+
+test parse [[
+  function (x : int) { x + 1 }
+]] parse succeeds

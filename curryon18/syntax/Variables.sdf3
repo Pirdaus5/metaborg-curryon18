@@ -1,0 +1,21 @@
+module Variables 
+
+imports Common
+imports Base
+
+context-free syntax
+
+  Exp.Let  = <
+    let <ID> = <Exp> in 
+    <Exp>
+  > 
+
+  Def.VarDecl = <def <ID> : <TypeExp> = <Exp>>
+  
+  Def.VarDeclNoType = <def <ID> = <Exp>>
+
+  Exp.Var = <<ID>>  
+  
+template options
+
+  ID = keyword {reject}

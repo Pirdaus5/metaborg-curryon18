@@ -1,0 +1,4 @@
+let inc = function (x : int) { x + 1 } in
+inc(3)
+
+ 

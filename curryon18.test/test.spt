@@ -1,7 +1,0 @@
-module test
-
-language curryon18
-
-test parse [[
-
-]] parse succeeds

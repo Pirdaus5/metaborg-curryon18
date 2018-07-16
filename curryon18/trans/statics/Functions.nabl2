@@ -1,0 +1,58 @@
+module statics/Functions
+
+rules // functions
+
+   [[ Fun(params, te, e) ^ (s) : FUN(ts, t)  ]] :=
+      new s_fun, s_fun -P-> s, 
+      Params[[ params ^ (s_fun) : ts ]],
+      [[ te ^ (s_fun) : t ]],
+      [[ e ^ (s_fun) : u ]],
+      t == u.
+           
+   Params[[ [] ^ (s) : [] ]].
+   
+   Params[[ [param | params] ^ (s) : [t | ts] ]] :=
+     [[ param ^ (s) : t ]],
+     Params[[ params ^ (s) : ts ]].
+     
+   [[ Param(x, te) ^ (s) : t ]] := 
+     [[ te ^ (s) : t ]],
+     Var{x} <- s, Var{x} : t.
+     
+   [[ ParamNoType(x) ^ (s) : t ]] := 
+     Var{x} <- s, Var{x} : t.
+     
+   [[ NoType() ^ (s) : t ]].
+   
+   [[ RetType(te) ^ (s) : t ]] :=
+      [[ te ^ (s) : t ]].
+      
+rules // function call 
+      
+   [[ App(e, es) ^ (s) : t ]] :=
+      [[ e ^ (s) : FUN(ts, t) ]],
+      Exps[[ es ^ (s) : ts ]].
+      
+   Exps[[ [ ] ^ (s) : [] ]].
+   
+   Exps[[ [e | es] ^ (s) : [t | ts] ]] :=
+     [[ e ^ (s) : t ]],
+     Exps[[ es ^ (s) : ts ]].
+     
+signature
+  constructors
+    FUN : list(Type) * Type -> Type
+  namespaces TVar
+    
+rules // function type
+
+   [[ FunT(tes, te) ^ (s) : FUN(ts, t) ]] := 
+      Types[[ tes ^ (s) : ts ]],
+      [[ te ^ (s) : t ]].
+   
+   Types[[ [] ^ (s) : [] ]].
+   
+   Types[[ [te | tes] ^ (s) : [t | ts] ]] :=
+     [[ te ^ (s) : t ]],
+     Types[[ tes ^ (s) : ts ]].
+     

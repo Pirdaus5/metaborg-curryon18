@@ -1,0 +1,13 @@
+module A {
+  module B {
+    imports C
+    def z = x
+  }
+  def x = 2 + z
+}
+
+module C {
+  imports A 
+  
+  def x = 1
+}

@@ -1,0 +1,10 @@
+module statics/ControlFlow
+
+rules
+
+  [[ If(e1, e2, e3) ^ (s) : t ]] :=
+     [[ e1 ^ (s) : BOOL() ]],
+     [[ e2 ^ (s) : t ]],
+     [[ e3 ^ (s) : t ]].
+     
+  

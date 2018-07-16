@@ -1,0 +1,6 @@
+def x = 1 + y
+def y = 3
+def f = y + 3
+
+def abc = 1 + 2 + 4 
+def cde = abc == 3 : bool

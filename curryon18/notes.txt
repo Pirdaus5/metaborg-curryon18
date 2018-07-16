@@ -1,0 +1,49 @@
+things to demonstrate
+
+testing
+
+syntax
+- productions
+- constructors
+- abstract syntax 
+- declarative disambiguation
+
+static semantics
+- constraint generation rules
+
+editor features
+- syntax checking 
+- error recovery
+- name checking
+- type checking
+- reference resolutions
+
+language features
+- expressions
+- constants
+- binary operators
+- brackets
+- low priority prefix operator
+- longest match
+
+- modules
+  - nested
+  - recursive
+  
+develop by feature group
+
+00) programs
+01) expressions
+02) variables
+03) modules
+
+work in progress
+
+- Layout-sensitive SDF3
+- Statix: more expressive type systems
+- FlowSpec: data flow analysis
+- DynSem: dynamic semantics & interpreter generation
+- PIE: flexible incremental workflows
+
+
+- dynamic 

@@ -1,0 +1,106 @@
+digraph scope_graph {
+rankdir="BT";
+
+"#-s-1" [shape="ellipse"];
+
+
+{ rank="same";
+  
+  "Mod{\"A\" @:1}" [shape="box"];
+  "#-s-1" -> "Mod{\"A\" @:1}";
+  
+  
+  
+  
+  "Mod{\"C\" @:14}" [shape="box"];
+  "#-s-1" -> "Mod{\"C\" @:14}";
+  
+  
+  
+  
+  
+  
+  
+  
+  
+}
+{
+  
+  
+}
+
+
+"#-s_mod-1" [shape="ellipse"];
+
+"#-s_mod-1" -> "#-s-1" [label="P"];
+
+
+
+{ rank="same";
+  
+  "Mod{\"B\" @:4}" [shape="box"];
+  "#-s_mod-1" -> "Mod{\"B\" @:4}";
+  
+  
+  
+  
+  
+  
+  
+  
+  
+}
+{
+  
+  
+}
+
+
+"#-s_mod-2" [shape="ellipse"];
+
+"#-s_mod-2" -> "#-s-1" [label="P"];
+
+
+"#-s_mod-2" -> "?-s_mod-4" [label="I"];
+
+
+
+{ rank="same";
+  
+  
+  
+  "Mod{\"A\" @:15}" [shape="box"];
+  "Mod{\"A\" @:15}" -> "#-s_mod-2";
+  
+  
+  
+  
+  
+}
+{
+  
+  
+}
+
+
+"#-s_mod-3" [shape="ellipse"];
+
+"#-s_mod-3" -> "#-s_mod-1" [label="P"];
+
+
+
+{ rank="same";
+  
+  
+  
+  
+  
+  
+}
+{
+  
+  
+}
+
+
+}
