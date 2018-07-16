@@ -10,7 +10,8 @@ context-free syntax
   Def.VarDeclNoType = <def <ID> = <Exp>>
 
   Exp.Var = <<ID>>  
-    Exp.Let  = <
+   
+  Exp.Let  = <
     let <ID> = <Exp> in 
     <Exp>
   > 

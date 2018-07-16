@@ -7,6 +7,14 @@ module Num {
   }
 }
 
+module $ID {
+  module $ID {
+  
+  $Defs
+}
+  
+}
+
 module Config {
   def consta = 56
   def constb = 5

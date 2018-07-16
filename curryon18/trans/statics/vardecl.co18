@@ -2,10 +2,10 @@ def y : int = x + 3
 
 def x : int = 1
 
-def b : bool = true
-
 def c : bool = b && false
 
-def d : bool = c + y // error
+def b : bool = true
 
-def e : int = c + y  // error
+def d : bool = c + y // error 
+
+def e : int = c + b

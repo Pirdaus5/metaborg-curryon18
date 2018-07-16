@@ -2,57 +2,38 @@ module Expressions
 
 imports Common Base
 
-context-free syntax 
+
  
- // expression syntax here
-
-  
-
-
-
 context-free syntax 
 
   TypeExp.IntT  = <int>
   TypeExp.BoolT = <bool>
   
   
+context-free syntax 
+
+  Exp       = <(<Exp>)> {bracket}
+  Exp.Int   = <<INT>>
+  Exp.Sub   = <<Exp> - <Exp>> {left}
+  Exp.Add   = <<Exp> + <Exp>> {left}
+  Exp.Mul   = <<Exp> * <Exp>> {left}
   
+  Exp.Eq    = <<Exp> == <Exp>> {non-assoc}
   
+  Exp.True  = <true>
+  Exp.False = <false>
+  Exp.Not   = <!<Exp>>
+  Exp.And   = <<Exp> && <Exp>> {left}
+  Exp.Or    = <<Exp> || <Exp>> {left}
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-//context-free syntax 
-//
-//  Exp       = <(<Exp>)> {bracket}
-//  Exp.Int   = <<INT>>
-//  Exp.Sub   = <<Exp> - <Exp>> {left}
-//  Exp.Add   = <<Exp> + <Exp>> {left}
-//  Exp.Mul   = <<Exp> * <Exp>> {left}
-//  
-//  Exp.Eq    = <<Exp> == <Exp>> {non-assoc}
-//  
-//  Exp.True  = <true>
-//  Exp.False = <false>
-//  Exp.Not   = <!<Exp>>
-//  Exp.And   = <<Exp> && <Exp>> {left}
-//  Exp.Or    = <<Exp> || <Exp>> {left}
-//  
-//context-free priorities
-//
-//  Exp.Mul 
-//  > {left: Exp.Add Exp.Sub}
-//  > Exp.Eq
-//  > Exp.Not
-//  > Exp.And
-//  > Exp.Or
+context-free priorities
+
+  Exp.Mul 
+  > {left: Exp.Add Exp.Sub}
+  > Exp.Eq
+  > Exp.Not
+  > Exp.And
+  > Exp.Or
  
 template options
 

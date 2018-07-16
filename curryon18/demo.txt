@@ -15,9 +15,6 @@ editor features
 - error recovery
 - type checking
 
-
-
-
 (2) Variables
 
 name binding
@@ -30,9 +27,6 @@ editor features
 - name checking
 - reference resolutions
 
-
-
-
 (3) Modules
 
 non-lexical binding
@@ -42,6 +36,10 @@ non-lexical binding
 (4) Functions
 
 inference
+
+(5) Syntactic completion
+- table generation to java from dynamic
+
 
 Back to notes.txt
 

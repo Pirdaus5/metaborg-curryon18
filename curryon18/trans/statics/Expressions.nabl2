@@ -10,68 +10,74 @@ rules // types
   [[ IntT() ^ (s) : INT() ]].
   [[ BoolT() ^ (s) : BOOL() ]].
   
-rules // operators
-
- // rules for operators here  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-//rules // arithmetic 
+//rules // operators
 //
-//  [[ Int(_) ^ (s) : INT() ]].
+// // rules for operators here  
 //  
-//  [[ Sub(e1, e2) ^ (s) : INT() ]] :=
-//     [[ e1 ^ (s) : INT() ]],
-//     [[ e2 ^ (s) : INT() ]].
+//  [[ Int(_) ^ (s) : INT() ]].
 //  
 //  [[ Add(e1, e2) ^ (s) : INT() ]] :=
 //     [[ e1 ^ (s) : INT() ]],
 //     [[ e2 ^ (s) : INT() ]].
-//  
+//     
 //  [[ Mul(e1, e2) ^ (s) : INT() ]] :=
 //     [[ e1 ^ (s) : INT() ]],
 //     [[ e2 ^ (s) : INT() ]].
-//     
-//rules // comparison
 //  
-//  [[ Eq(e1, e2) ^ (s) : BOOL() ]] :=
-//     [[ e1 ^ (s) : t ]],
-//     [[ e2 ^ (s) : t ]].
-//
-//rules // boolean     
-//     
-//  [[ True() ^ (s) : BOOL() ]].
-//  [[ False() ^ (s) : BOOL() ]].
-//     
-//  [[ Not(e) ^ (s) : BOOL() ]] :=
-//     [[ e ^ (s) : BOOL() ]].
-//     
-//  [[ And(e1, e2) ^ (s) : BOOL() ]] :=
-//     [[ e1 ^ (s) : BOOL() ]],
-//     [[ e2 ^ (s) : BOOL() ]].
-//     
-//  [[ Or(e1, e2) ^ (s) : BOOL() ]] :=
-//     [[ e1 ^ (s) : BOOL() ]],
-//     [[ e2 ^ (s) : BOOL() ]].
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+rules // arithmetic 
+
+  [[ Int(_) ^ (s) : INT() ]].
+  
+  [[ Sub(e1, e2) ^ (s) : INT() ]] :=
+     [[ e1 ^ (s) : INT() ]],
+     [[ e2 ^ (s) : INT() ]].
+  
+  [[ Add(e1, e2) ^ (s) : INT() ]] :=
+     [[ e1 ^ (s) : INT() ]],
+     [[ e2 ^ (s) : INT() ]].
+  
+  [[ Mul(e1, e2) ^ (s) : INT() ]] :=
+     [[ e1 ^ (s) : INT() ]],
+     [[ e2 ^ (s) : INT() ]].
+     
+rules // comparison
+  
+  [[ Eq(e1, e2) ^ (s) : BOOL() ]] :=
+     [[ e1 ^ (s) : t ]],
+     [[ e2 ^ (s) : t ]].
+
+rules // boolean     
+     
+  [[ True() ^ (s) : BOOL() ]].
+  [[ False() ^ (s) : BOOL() ]].
+     
+  [[ Not(e) ^ (s) : BOOL() ]] :=
+     [[ e ^ (s) : BOOL() ]].
+     
+  [[ And(e1, e2) ^ (s) : BOOL() ]] :=
+     [[ e1 ^ (s) : BOOL() ]],
+     [[ e2 ^ (s) : BOOL() ]].
+     
+  [[ Or(e1, e2) ^ (s) : BOOL() ]] :=
+     [[ e1 ^ (s) : BOOL() ]],
+     [[ e2 ^ (s) : BOOL() ]].

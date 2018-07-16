@@ -5,16 +5,21 @@ rules // variables
   Def[[ VarDecl(x, te, e) ^ (s) ]] :=     
      [[ te ^ (s) : t ]],
      [[ e ^ (s) : u ]], 
+     Var{x} <- s, Var{x} : t,
      t == u.
      
   Def[[ VarDeclNoType(x, e) ^ (s) ]] := 
-     [[ e ^ (s) : t ]].
+     [[ e ^ (s) : t ]],    
+     Var{x} <- s, Var{x} : t.
      
-  [[ Var(x) ^ (s) : t ]].
+  [[ Var(x) ^ (s) : t ]] :=
+     Var{x} -> s, Var{x} |-> d, d : t.
      
   [[ Let(x, e1, e2) ^ (s) : u ]] := 
      [[ e1 ^ (s) : t ]],
-     [[ e2 ^ (s) : u ]].
+     [[ e2 ^ (s_let) : u ]],
+     new s_let, s_let -P-> s,
+     Var{x} <- s_let, Var{x} : t.
      
      
      

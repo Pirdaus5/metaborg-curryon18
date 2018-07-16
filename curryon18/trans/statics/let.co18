@@ -1,13 +1,17 @@
-let x = 1 in
+let x = 2 in
+let x = 3 in 
+x
 
-let b = true in
-
-let y = x + 3 in
-
-let c = b && false in
-
-let d = c + y in // error
-
-let e = c + y in  // error
- 
-e + 3
+//let x = 1 in
+//
+//let y = x + 3 in
+//
+//let c = b && false in
+//
+//let b = true in
+//
+//let d = c + y in // error
+//
+//let e = c + y in  // error
+// 
+//e + 3
